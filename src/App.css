@@ -1,0 +1,303 @@
+@font-face {
+  font-family: "danaFaNum";
+  src:
+    url("./assets/fonts/dana-fanum-regular.woff2") format("woff2"),
+    url("./assets/fonts/dana-fanum-regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "danaFaNum";
+  src:
+    url("./assets/fonts/dana-fanum-bold.woff2") format("woff2"),
+    url("./assets/fonts/dana-fanum-bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --brand-primary: #4f3cc9;
+  --brand-primary-dark: #372b94;
+  --brand-primary-light: #ece9fb;
+  --brand-accent: #ff6b4a;
+  --brand-accent-light: #ffe8e2;
+  --text-main: #1a1b25;
+  --text-muted: #6b7280;
+  --bg-soft: #f8f8fc;
+  --border-soft: #eceef4;
+  --radius-lg: 18px;
+  --radius-md: 12px;
+  --shadow-soft: 0 6px 24px rgba(26, 27, 37, 0.06);
+  --shadow-hover: 0 16px 32px rgba(79, 60, 201, 0.16);
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  font-family: "danaFaNum", Tahoma, sans-serif !important;
+}
+
+body {
+  background-color: var(--bg-soft);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#root > div {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ---------- Navbar ---------- */
+.shop-navbar {
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--border-soft);
+  box-shadow: 0 2px 12px rgba(26, 27, 37, 0.04);
+}
+
+.shop-navbar .brand-mark {
+  font-weight: 800;
+  font-size: 1.35rem;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+
+.shop-navbar .brand-mark span {
+  color: var(--brand-primary);
+}
+
+.shop-navbar .nav-link {
+  font-weight: 500;
+  color: var(--text-main);
+  cursor: pointer;
+}
+
+.shop-navbar .nav-link:hover,
+.shop-navbar .nav-link.active {
+  color: var(--brand-primary);
+}
+
+.cart-badge-btn {
+  position: relative;
+  background: var(--brand-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.cart-badge-btn:hover {
+  background: var(--brand-primary-dark);
+  color: #fff;
+}
+
+/* ---------- Section headings ---------- */
+.section-heading {
+  font-weight: 800;
+  font-size: 1.6rem;
+  letter-spacing: -0.01em;
+}
+
+.section-subheading {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* ---------- Product cards ---------- */
+
+.container.py-4 {
+  flex: 1;
+}
+.product-card {
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #fff;
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+.product-card .img-wrap {
+  overflow: hidden;
+  height: 170px;
+}
+
+.product-card .img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.product-card:hover .img-wrap img {
+  transform: scale(1.08);
+}
+
+.category-pill {
+  display: inline-block;
+  background: var(--brand-primary-light);
+  color: var(--brand-primary-dark);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+}
+
+.product-name {
+  font-weight: 700;
+  font-size: 0.98rem;
+  min-height: 2.6em;
+}
+
+.product-price {
+  color: var(--brand-primary-dark);
+  font-weight: 800;
+  font-size: 1.05rem;
+}
+
+.btn-add-cart {
+  background: var(--brand-accent);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  padding: 0.4rem 0.85rem;
+  font-size: 0.85rem;
+  transition:
+    background 0.15s ease,
+    transform 0.1s ease;
+}
+
+.btn-add-cart:hover {
+  background: #ea5636;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* ---------- Cart ---------- */
+.cart-panel {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-soft);
+  background: #fff;
+  position: sticky;
+  top: -10px;
+  margin-bottom: 50px;
+}
+
+.cart-item-img {
+  width: 52px;
+  height: 52px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-soft);
+}
+
+.qty-btn {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-soft);
+  background: var(--bg-soft);
+  font-weight: 700;
+}
+
+.qty-btn:hover {
+  background: var(--brand-primary-light);
+  border-color: var(--brand-primary);
+}
+
+.btn-remove-item {
+  color: #d64545;
+  border: none;
+  background: transparent;
+  font-size: 0.8rem;
+}
+
+.btn-checkout {
+  background: var(--brand-primary);
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  padding: 0.7rem;
+  transition: background 0.15s ease;
+}
+
+.btn-checkout:hover {
+  background: var(--brand-primary-dark);
+}
+
+.empty-cart {
+  text-align: center;
+  padding: 2.5rem 1rem;
+}
+
+.empty-cart .emoji {
+  font-size: 2.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.btn-continue-shopping {
+  border: 1px solid var(--brand-primary);
+  color: var(--brand-primary-dark);
+  background: #fff;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+}
+
+.btn-continue-shopping:hover {
+  background: var(--brand-primary-light);
+  color: var(--brand-primary-dark);
+}
+
+/* ---------- Footer ---------- */
+.shop-footer {
+  margin-top: 3rem;
+  border-top: 1px solid var(--border-soft);
+  background: #fff;
+  padding: 2rem 0 1.25rem;
+  color: var(--text-muted);
+}
+
+.shop-footer .brand-mark {
+  font-weight: 800;
+  color: var(--text-main);
+  font-size: 1.15rem;
+}
+
+.shop-footer a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.shop-footer a:hover {
+  color: var(--brand-primary);
+}
+
+/* ---------- Toast ---------- */
+.cart-toast {
+  border-radius: var(--radius-md);
+  border: none;
+  box-shadow: var(--shadow-soft);
+}
